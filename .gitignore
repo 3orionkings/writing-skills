@@ -1,0 +1,14 @@
+# Build output
+dist/
+
+# Python
+__pycache__/
+*.pyc
+
+# Test output written with --out
+tests/results/
+
+# OS and editor files
+.DS_Store
+.idea/
+.vscode/

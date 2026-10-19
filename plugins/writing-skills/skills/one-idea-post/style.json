@@ -1,0 +1,42 @@
+{
+  "name": "one-idea-post",
+  "words": {
+    "min": 100,
+    "max": 1400
+  },
+  "headings": "none",
+  "bullets": "none",
+  "require_imperative_title": true,
+  "close_max_words": 11,
+  "max_paragraph_sentences": 5,
+  "forbid_summary_closer": true,
+  "variants": {
+    "confessional": {
+      "description": "350 to 750 words opening on a scene or an admission; no lists",
+      "words": {
+        "min": 350,
+        "max": 750
+      },
+      "numbered_list": "none"
+    },
+    "list-essay": {
+      "description": "1,100 words or more: four paragraphs of argument, then eight to fifteen numbered items, then a one-line close",
+      "words": {
+        "min": 1100
+      },
+      "numbered_list": {
+        "min": 8,
+        "max": 15
+      }
+    },
+    "miniature": {
+      "description": "130 to 250 words, no first person, one aphorism with one example",
+      "words": {
+        "min": 130,
+        "max": 250
+      },
+      "numbered_list": "none",
+      "max_first_person_per_1000_words": 0
+    }
+  }
+}

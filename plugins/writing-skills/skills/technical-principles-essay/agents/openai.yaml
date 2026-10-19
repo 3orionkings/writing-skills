@@ -1,0 +1,7 @@
+# Codex and ChatGPT display metadata. The skill itself is SKILL.md.
+interface:
+  display_name: "Technical Principles Essay"
+  short_description: "Engineering essay proving each principle with measured numbers"
+  default_prompt: "Write a technical principles essay arguing that"
+policy:
+  allow_implicit_invocation: true

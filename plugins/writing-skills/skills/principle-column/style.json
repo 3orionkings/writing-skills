@@ -1,0 +1,39 @@
+{
+  "name": "principle-column",
+  "words": {
+    "min": 600,
+    "max": 1700
+  },
+  "headings": "none",
+  "bullets": "none",
+  "numbered_list": "none",
+  "paragraphs": {
+    "min": 19,
+    "max": 30
+  },
+  "forbid_summary_closer": true,
+  "require_first_person": true,
+  "variants": {
+    "confessional-list": {
+      "description": "the author's own mistakes as numbered bold headings, one confession each",
+      "headings": null,
+      "numbered_list": {
+        "min": 3
+      },
+      "paragraphs": null
+    },
+    "coaching": {
+      "description": "sectioned and scannable, 1,000 to 3,000 words, numbered headings, warm second person",
+      "words": {
+        "min": 1000,
+        "max": 3000
+      },
+      "headings": {
+        "min": 3
+      },
+      "bullets": null,
+      "numbered_list": null,
+      "paragraphs": null
+    }
+  }
+}

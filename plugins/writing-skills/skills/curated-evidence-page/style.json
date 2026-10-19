@@ -1,0 +1,37 @@
+{
+  "name": "curated-evidence-page",
+  "words": {
+    "min": 150,
+    "max": 6000
+  },
+  "first_sentence_max_words": 25,
+  "require_entry_links": true,
+  "require_entry_numbers": true,
+  "require_links_min": 5,
+  "forbid_summary_closer": true,
+  "require_question_close": true,
+  "variants": {
+    "question-list": {
+      "description": "twenty-odd plain question headlines, each with the evidence that makes it hard; closes on an entry that admits what its chart overstates",
+      "require_entry_links": null,
+      "require_entry_numbers": null,
+      "require_question_close": null
+    },
+    "reading-list": {
+      "description": "titles with a one-line description and a link, marked as a first cut, naming what it leaves out",
+      "require_entry_numbers": null,
+      "require_question_close": null
+    },
+    "dispatch": {
+      "description": "a dated first-person post of 300 to 2,000 words that ends on a question or an invitation",
+      "words": {
+        "min": 300,
+        "max": 2000
+      },
+      "require_entry_links": null,
+      "require_entry_numbers": null,
+      "require_links_min": 1,
+      "require_first_person": true
+    }
+  }
+}

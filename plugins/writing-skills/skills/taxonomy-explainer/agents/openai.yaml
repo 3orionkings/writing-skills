@@ -1,0 +1,7 @@
+# Codex and ChatGPT display metadata. The skill itself is SKILL.md.
+interface:
+  display_name: "Taxonomy Explainer"
+  short_description: "Research explainer that maps a literature onto a taxonomy"
+  default_prompt: "Write a taxonomy explainer on"
+policy:
+  allow_implicit_invocation: true

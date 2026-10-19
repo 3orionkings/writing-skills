@@ -1,0 +1,14 @@
+{
+  "name": "mechanism-essay",
+  "words": {
+    "min": 1800,
+    "max": 16000
+  },
+  "bold_thesis_within_paragraphs": 3,
+  "numbered_list": "required_near_top",
+  "require_objection": true,
+  "forbid_summary_closer": true,
+  "require_numbers_min": 6,
+  "figures": "none",
+  "bullets": "allowed"
+}

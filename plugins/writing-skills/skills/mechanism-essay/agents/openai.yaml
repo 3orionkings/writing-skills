@@ -1,0 +1,7 @@
+# Codex and ChatGPT display metadata. The skill itself is SKILL.md.
+interface:
+  display_name: "Mechanism Essay"
+  short_description: "Position essay that builds the mechanism before the claim"
+  default_prompt: "Write a mechanism essay making the case that"
+policy:
+  allow_implicit_invocation: true

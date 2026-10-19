@@ -1,0 +1,396 @@
+[
+ {
+  "id": "humanizer-formatted-content",
+  "item": 5,
+  "files": [
+   "humanizer/SKILL.md"
+  ],
+  "present": [
+   "(?m)^## Formatted content",
+   "--allow-markdown",
+   "README",
+   "PR description",
+   "emails, letters, messages"
+  ]
+ },
+ {
+  "id": "humanizer-description-narrowed",
+  "item": 6,
+  "files": [
+   "humanizer/SKILL.md"
+  ],
+  "absent": [
+   "While loaded, the same rules govern Claude's own replies"
+  ],
+  "description_present": [
+   "Not for"
+  ]
+ },
+ {
+  "id": "humanizer-dashes-at-author-rate",
+  "item": 7,
+  "files": [
+   "humanizer/SKILL.md",
+   "humanizer/references/ai-tells.md"
+  ],
+  "present": [
+   "author's (?:own )?rate"
+  ]
+ },
+ {
+  "id": "rules-dashes-at-author-rate",
+  "item": 7,
+  "files": [
+   "curated-evidence-page/references/human-writing-rules.md",
+   "field-guide/references/human-writing-rules.md",
+   "mechanism-essay/references/human-writing-rules.md",
+   "one-idea-post/references/human-writing-rules.md",
+   "patterns-survey/references/human-writing-rules.md",
+   "principle-column/references/human-writing-rules.md",
+   "reportage-deep-dive/references/human-writing-rules.md",
+   "strategy-pattern-essay/references/human-writing-rules.md",
+   "taxonomy-explainer/references/human-writing-rules.md",
+   "technical-principles-essay/references/human-writing-rules.md",
+   "thesis-first-note/references/human-writing-rules.md"
+  ],
+  "present": [
+   "--author-sample"
+  ]
+ },
+ {
+  "id": "humanizer-literal-term-cleared",
+  "item": 8,
+  "files": [
+   "humanizer/SKILL.md",
+   "curated-evidence-page/references/human-writing-rules.md",
+   "field-guide/references/human-writing-rules.md",
+   "mechanism-essay/references/human-writing-rules.md",
+   "one-idea-post/references/human-writing-rules.md",
+   "patterns-survey/references/human-writing-rules.md",
+   "principle-column/references/human-writing-rules.md",
+   "reportage-deep-dive/references/human-writing-rules.md",
+   "strategy-pattern-essay/references/human-writing-rules.md",
+   "taxonomy-explainer/references/human-writing-rules.md",
+   "technical-principles-essay/references/human-writing-rules.md",
+   "thesis-first-note/references/human-writing-rules.md"
+  ],
+  "present": [
+   "cleared by leaving"
+  ]
+ },
+ {
+  "id": "humanizer-minimal-edit",
+  "item": 9,
+  "files": [
+   "humanizer/SKILL.md"
+  ],
+  "present": [
+   "(?i)minimal edit"
+  ]
+ },
+ {
+  "id": "humanizer-note-above-text",
+  "item": 10,
+  "files": [
+   "humanizer/SKILL.md"
+  ],
+  "present": [
+   "above the text"
+  ],
+  "absent": [
+   "say so in one line after the text"
+  ]
+ },
+ {
+  "id": "humanizer-ask-request-emails-only",
+  "item": 11,
+  "files": [
+   "humanizer/SKILL.md"
+  ],
+  "present": [
+   "(?i)request email"
+  ],
+  "absent": [
+   "In a letter or email to another party, the ask goes in the first or second sentence"
+  ]
+ },
+ {
+  "id": "vocabulary-single-source",
+  "item": 4,
+  "files": [
+   "humanizer/SKILL.md",
+   "humanizer/references/ai-tells.md",
+   "curated-evidence-page/references/human-writing-rules.md",
+   "field-guide/references/human-writing-rules.md",
+   "mechanism-essay/references/human-writing-rules.md",
+   "one-idea-post/references/human-writing-rules.md",
+   "patterns-survey/references/human-writing-rules.md",
+   "principle-column/references/human-writing-rules.md",
+   "reportage-deep-dive/references/human-writing-rules.md",
+   "strategy-pattern-essay/references/human-writing-rules.md",
+   "taxonomy-explainer/references/human-writing-rules.md",
+   "technical-principles-essay/references/human-writing-rules.md",
+   "thesis-first-note/references/human-writing-rules.md"
+  ],
+  "present": [
+   "lint\\.py --list"
+  ]
+ },
+ {
+  "id": "variants-in-workflow",
+  "item": 13,
+  "files": [
+   "curated-evidence-page/SKILL.md",
+   "field-guide/SKILL.md",
+   "one-idea-post/SKILL.md",
+   "patterns-survey/SKILL.md",
+   "principle-column/SKILL.md",
+   "reportage-deep-dive/SKILL.md",
+   "technical-principles-essay/SKILL.md",
+   "thesis-first-note/SKILL.md"
+  ],
+  "present": [
+   "--variant"
+  ]
+ },
+ {
+  "id": "departures-line",
+  "item": 16,
+  "files": [
+   "reportage-deep-dive/SKILL.md",
+   "thesis-first-note/SKILL.md",
+   "technical-principles-essay/SKILL.md",
+   "field-guide/SKILL.md",
+   "mechanism-essay/SKILL.md",
+   "strategy-pattern-essay/SKILL.md"
+  ],
+  "present": [
+   "(?m)^## Departures from the humanizer"
+  ]
+ },
+ {
+  "id": "mechanism-hypothetical-numbers",
+  "item": 17,
+  "files": [
+   "mechanism-essay/SKILL.md"
+  ],
+  "present": [
+   "hypothetical"
+  ],
+  "absent": [
+   "invented round numbers"
+  ]
+ },
+ {
+  "id": "evidence-fallbacks",
+  "item": 18,
+  "files": [
+   "mechanism-essay/SKILL.md",
+   "thesis-first-note/SKILL.md",
+   "field-guide/SKILL.md",
+   "reportage-deep-dive/SKILL.md",
+   "technical-principles-essay/SKILL.md",
+   "principle-column/SKILL.md",
+   "one-idea-post/SKILL.md",
+   "patterns-survey/SKILL.md"
+  ],
+  "present": [
+   "If you don't have"
+  ]
+ },
+ {
+  "id": "principle-column-one-link-range",
+  "item": 18,
+  "files": [
+   "principle-column/SKILL.md"
+  ],
+  "absent": [
+   "three to nine"
+  ]
+ },
+ {
+  "id": "extras-only-if-supplied",
+  "item": 19,
+  "files": [
+   "patterns-survey/SKILL.md",
+   "curated-evidence-page/SKILL.md",
+   "taxonomy-explainer/SKILL.md",
+   "reportage-deep-dive/SKILL.md",
+   "field-guide/SKILL.md",
+   "thesis-first-note/SKILL.md"
+  ],
+  "present": [
+   "only if the user supplies"
+  ]
+ },
+ {
+  "id": "extras-not-in-failure-lists",
+  "item": 19,
+  "files": [
+   "curated-evidence-page/SKILL.md",
+   "field-guide/SKILL.md",
+   "mechanism-essay/SKILL.md",
+   "one-idea-post/SKILL.md",
+   "patterns-survey/SKILL.md",
+   "principle-column/SKILL.md",
+   "reportage-deep-dive/SKILL.md",
+   "strategy-pattern-essay/SKILL.md",
+   "taxonomy-explainer/SKILL.md",
+   "technical-principles-essay/SKILL.md",
+   "thesis-first-note/SKILL.md"
+  ],
+  "absent": [
+   "Omitting the reader quotes",
+   "Forgetting the mechanics \\(the paywall point",
+   "Polishing away the typos, the thanks"
+  ]
+ },
+ {
+  "id": "no-source-writer-specifics",
+  "item": 20,
+  "files": [
+   "curated-evidence-page/SKILL.md",
+   "field-guide/SKILL.md",
+   "mechanism-essay/SKILL.md",
+   "one-idea-post/SKILL.md",
+   "patterns-survey/SKILL.md",
+   "principle-column/SKILL.md",
+   "reportage-deep-dive/SKILL.md",
+   "strategy-pattern-essay/SKILL.md",
+   "taxonomy-explainer/SKILL.md",
+   "technical-principles-essay/SKILL.md",
+   "thesis-first-note/SKILL.md"
+  ],
+  "absent": [
+   "three years' tenure",
+   "thousands of students",
+   "2,500 past conversations",
+   "25, 3 and 2",
+   "longest post",
+   "nearly fired"
+  ]
+ },
+ {
+  "id": "never-reuse-example-specifics",
+  "item": 20,
+  "files": [
+   "curated-evidence-page/SKILL.md",
+   "field-guide/SKILL.md",
+   "mechanism-essay/SKILL.md",
+   "one-idea-post/SKILL.md",
+   "patterns-survey/SKILL.md",
+   "principle-column/SKILL.md",
+   "reportage-deep-dive/SKILL.md",
+   "strategy-pattern-essay/SKILL.md",
+   "taxonomy-explainer/SKILL.md",
+   "technical-principles-essay/SKILL.md",
+   "thesis-first-note/SKILL.md",
+   "curated-evidence-page/references/human-writing-rules.md",
+   "field-guide/references/human-writing-rules.md",
+   "mechanism-essay/references/human-writing-rules.md",
+   "one-idea-post/references/human-writing-rules.md",
+   "patterns-survey/references/human-writing-rules.md",
+   "principle-column/references/human-writing-rules.md",
+   "reportage-deep-dive/references/human-writing-rules.md",
+   "strategy-pattern-essay/references/human-writing-rules.md",
+   "taxonomy-explainer/references/human-writing-rules.md",
+   "technical-principles-essay/references/human-writing-rules.md",
+   "thesis-first-note/references/human-writing-rules.md"
+  ],
+  "present": [
+   "(?i)never reuse an example's specifics"
+  ]
+ },
+ {
+  "id": "research-step",
+  "item": 21,
+  "files": [
+   "taxonomy-explainer/SKILL.md",
+   "patterns-survey/SKILL.md",
+   "curated-evidence-page/SKILL.md",
+   "technical-principles-essay/SKILL.md",
+   "reportage-deep-dive/SKILL.md"
+  ],
+  "present": [
+   "Open every source before citing it",
+   "(?i)unverified"
+  ]
+ },
+ {
+  "id": "taxonomy-figures-and-opening",
+  "item": 21,
+  "files": [
+   "taxonomy-explainer/SKILL.md"
+  ],
+  "absent": [
+   "reproduced from the cited paper",
+   "or a statement of why the topic matters",
+   "restated and reproduced"
+  ],
+  "present": [
+   "(?i)rights"
+  ]
+ },
+ {
+  "id": "not-for-lines",
+  "item": 22,
+  "files": [
+   "curated-evidence-page/SKILL.md",
+   "field-guide/SKILL.md",
+   "mechanism-essay/SKILL.md",
+   "one-idea-post/SKILL.md",
+   "patterns-survey/SKILL.md",
+   "principle-column/SKILL.md",
+   "reportage-deep-dive/SKILL.md",
+   "strategy-pattern-essay/SKILL.md",
+   "taxonomy-explainer/SKILL.md",
+   "technical-principles-essay/SKILL.md",
+   "thesis-first-note/SKILL.md"
+  ],
+  "description_present": [
+   "Not for:"
+  ]
+ },
+ {
+  "id": "descriptions-valid",
+  "item": 22,
+  "files": [
+   "curated-evidence-page/SKILL.md",
+   "field-guide/SKILL.md",
+   "mechanism-essay/SKILL.md",
+   "one-idea-post/SKILL.md",
+   "patterns-survey/SKILL.md",
+   "principle-column/SKILL.md",
+   "reportage-deep-dive/SKILL.md",
+   "strategy-pattern-essay/SKILL.md",
+   "taxonomy-explainer/SKILL.md",
+   "technical-principles-essay/SKILL.md",
+   "thesis-first-note/SKILL.md",
+   "humanizer/SKILL.md"
+  ],
+  "description_max": 1024,
+  "description_absent": [
+   "[<>]"
+  ]
+ },
+ {
+  "id": "rules-no-stale-line",
+  "item": 23,
+  "files": [
+   "curated-evidence-page/references/human-writing-rules.md",
+   "field-guide/references/human-writing-rules.md",
+   "mechanism-essay/references/human-writing-rules.md",
+   "one-idea-post/references/human-writing-rules.md",
+   "patterns-survey/references/human-writing-rules.md",
+   "principle-column/references/human-writing-rules.md",
+   "reportage-deep-dive/references/human-writing-rules.md",
+   "strategy-pattern-essay/references/human-writing-rules.md",
+   "taxonomy-explainer/references/human-writing-rules.md",
+   "technical-principles-essay/references/human-writing-rules.md",
+   "thesis-first-note/references/human-writing-rules.md"
+  ],
+  "absent": [
+   "ignore any author-specific defaults"
+  ]
+ }
+]

@@ -1,0 +1,36 @@
+{
+  "name": "writing-skills",
+  "version": "1.0.0",
+  "description": "A humanizer that strips machine-writing tells from drafts, plus eleven writing forms for posts, columns, essays, guides, surveys and research notes. Every skill ships a linter, and every form a structure checker.",
+  "author": {
+    "name": "Emmanuel Benami",
+    "url": "https://github.com/3orionkings"
+  },
+  "homepage": "https://github.com/3orionkings/writing-skills",
+  "repository": "https://github.com/3orionkings/writing-skills",
+  "license": "MIT",
+  "keywords": [
+    "writing",
+    "humanizer",
+    "style",
+    "essays",
+    "editing",
+    "agent-skills",
+    "claude-code",
+    "codex"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Writing Skills",
+    "shortDescription": "Humanize drafts and write in eleven proven forms",
+    "longDescription": "A humanizer that strips machine-writing tells from drafts, plus eleven writing forms for posts, columns, essays, guides, surveys and research notes. Every skill ships a linter, and every form a structure checker. Install it, then ask for a form by name or describe the piece you want.",
+    "developerName": "Emmanuel Benami",
+    "category": "Productivity",
+    "websiteURL": "https://github.com/3orionkings/writing-skills",
+    "defaultPrompt": [
+      "Humanize this draft and keep every fact and citation:",
+      "Write a one-idea post about",
+      "Write a field guide on"
+    ]
+  }
+}

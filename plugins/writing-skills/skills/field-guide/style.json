@@ -1,0 +1,36 @@
+{
+  "name": "field-guide",
+  "words": {
+    "min": 1200,
+    "max": 13000
+  },
+  "headings": {
+    "min": 3
+  },
+  "require_callouts_or_steps": true,
+  "require_bold_lead_ins_min": 3,
+  "require_numbers_min": 4,
+  "figure_captions_short": true,
+  "forbid_summary_closer": true,
+  "variants": {
+    "faq": {
+      "description": "dozens of question headings, each answered verdict first, with bold lead-ins",
+      "require_callouts_or_steps": null,
+      "require_question_headings_min": 12
+    },
+    "teardown": {
+      "description": "the polemic or teardown of 2,000 to 3,500 words: claim first, examples, no table of contents, no bold or callouts",
+      "words": {
+        "min": 2000,
+        "max": 3500
+      },
+      "require_callouts_or_steps": null,
+      "require_bold_lead_ins_min": null
+    },
+    "notes-page": {
+      "description": "annotated slides, each with a paraphrase and a short Q&A",
+      "require_callouts_or_steps": null,
+      "require_bold_lead_ins_min": null
+    }
+  }
+}

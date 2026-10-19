@@ -1,0 +1,7 @@
+# Codex and ChatGPT display metadata. The skill itself is SKILL.md.
+interface:
+  display_name: "Reportage Deep Dive"
+  short_description: "Reportage on how engineering works inside named companies"
+  default_prompt: "Write a reportage deep dive on"
+policy:
+  allow_implicit_invocation: true

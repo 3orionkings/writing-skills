@@ -1,0 +1,58 @@
+{
+  "name": "technical-principles-essay",
+  "words": {
+    "min": 900,
+    "max": 6000
+  },
+  "headings": {
+    "min": 3
+  },
+  "headings_assert": true,
+  "require_boxed_principles": true,
+  "require_numbers_min": 8,
+  "require_links_min": 4,
+  "figure_captions_full_sentence": true,
+  "forbid_summary_closer": true,
+  "variants": {
+    "single-thesis": {
+      "description": "1,200 to 1,500 words: thesis in bold, objections removed in three headed sections, a demo walkthrough",
+      "words": {
+        "min": 1200,
+        "max": 1500
+      },
+      "headings_assert": null,
+      "require_boxed_principles": null,
+      "bold_thesis_within_paragraphs": 3
+    },
+    "announcement": {
+      "description": "a vision statement: founding frustration, traction numbers, a historical analogy, three shifts as headings, a mapping table",
+      "headings_assert": null,
+      "require_boxed_principles": null,
+      "require_links_min": 1,
+      "figure_captions_full_sentence": "if_present"
+    },
+    "short-note": {
+      "description": "150 to 700 words of one-sentence paragraphs with no headings or images",
+      "words": {
+        "min": 150,
+        "max": 700
+      },
+      "headings": "none",
+      "headings_assert": null,
+      "require_boxed_principles": null,
+      "require_numbers_min": 2,
+      "require_links_min": 1,
+      "figure_captions_full_sentence": null,
+      "figures": "none",
+      "max_paragraph_sentences": 2
+    },
+    "year-in-review": {
+      "description": "twenty-odd fragments whose headings are claims, each with a few paragraphs, a quotation and a footnote",
+      "headings": {
+        "min": 10
+      },
+      "require_boxed_principles": null,
+      "figure_captions_full_sentence": "if_present"
+    }
+  }
+}

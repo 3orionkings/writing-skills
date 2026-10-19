@@ -1,0 +1,7 @@
+# Codex and ChatGPT display metadata. The skill itself is SKILL.md.
+interface:
+  display_name: "Curated Evidence Page"
+  short_description: "Sourced, dated list where the selection is the argument"
+  default_prompt: "Build a curated evidence page collecting"
+policy:
+  allow_implicit_invocation: true

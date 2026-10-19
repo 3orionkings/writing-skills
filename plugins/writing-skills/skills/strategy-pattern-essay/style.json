@@ -1,0 +1,14 @@
+{
+  "name": "strategy-pattern-essay",
+  "words": {
+    "min": 1500,
+    "max": 7000
+  },
+  "headings": {
+    "min": 2
+  },
+  "heading_max_words": 4,
+  "bold_thesis_within_paragraphs": 4,
+  "require_objection": true,
+  "forbid_summary_closer": true
+}

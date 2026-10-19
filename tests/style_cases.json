@@ -1,0 +1,815 @@
+[
+ {
+  "id": "curated-evidence-page/default-good",
+  "item": 0,
+  "skill": "curated-evidence-page",
+  "file": "cases/curated-evidence-page/default-good.md",
+  "variant": null,
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "",
+  "words": 281
+ },
+ {
+  "id": "curated-evidence-page/question-list-good",
+  "item": 13,
+  "skill": "curated-evidence-page",
+  "file": "cases/curated-evidence-page/question-list-good.md",
+  "variant": "question-list",
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "",
+  "words": 775
+ },
+ {
+  "id": "curated-evidence-page/reading-list-good",
+  "item": 13,
+  "skill": "curated-evidence-page",
+  "file": "cases/curated-evidence-page/reading-list-good.md",
+  "variant": "reading-list",
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "",
+  "words": 183
+ },
+ {
+  "id": "curated-evidence-page/dispatch-good",
+  "item": 13,
+  "skill": "curated-evidence-page",
+  "file": "cases/curated-evidence-page/dispatch-good.md",
+  "variant": "dispatch",
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "",
+  "words": 571
+ },
+ {
+  "id": "curated-evidence-page/dispatch-no-first-person-bad",
+  "item": 13,
+  "skill": "curated-evidence-page",
+  "file": "cases/curated-evidence-page/dispatch-no-first-person-bad.md",
+  "variant": "dispatch",
+  "expect": [
+   {
+    "check": "written in the first person",
+    "passed": false
+   }
+  ],
+  "note": "",
+  "words": 569
+ },
+ {
+  "id": "field-guide/default-good",
+  "item": 0,
+  "skill": "field-guide",
+  "file": "cases/field-guide/default-good.md",
+  "variant": null,
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "",
+  "words": 1381
+ },
+ {
+  "id": "field-guide/long-caption-bad",
+  "item": 15,
+  "skill": "field-guide",
+  "file": "cases/field-guide/long-caption-bad.md",
+  "variant": null,
+  "expect": [
+   {
+    "check": "short caption or a colon introduction",
+    "passed": false
+   }
+  ],
+  "note": "",
+  "words": 1398
+ },
+ {
+  "id": "field-guide/faq-good",
+  "item": 13,
+  "skill": "field-guide",
+  "file": "cases/field-guide/faq-good.md",
+  "variant": "faq",
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "",
+  "words": 1813
+ },
+ {
+  "id": "field-guide/teardown-good",
+  "item": 13,
+  "skill": "field-guide",
+  "file": "cases/field-guide/teardown-good.md",
+  "variant": "teardown",
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "",
+  "words": 2254
+ },
+ {
+  "id": "field-guide/notes-page-good",
+  "item": 13,
+  "skill": "field-guide",
+  "file": "cases/field-guide/notes-page-good.md",
+  "variant": "notes-page",
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "",
+  "words": 1396
+ },
+ {
+  "id": "mechanism-essay/default-good",
+  "item": 0,
+  "skill": "mechanism-essay",
+  "file": "cases/mechanism-essay/default-good.md",
+  "variant": null,
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "",
+  "words": 2054
+ },
+ {
+  "id": "mechanism-essay/figure-bad",
+  "item": 15,
+  "skill": "mechanism-essay",
+  "file": "cases/mechanism-essay/figure-bad.md",
+  "variant": null,
+  "expect": [
+   {
+    "check": "no figures or tables",
+    "passed": false
+   }
+  ],
+  "note": "",
+  "words": 2064
+ },
+ {
+  "id": "mechanism-essay/heading-numbers-only-bad",
+  "item": 14,
+  "skill": "mechanism-essay",
+  "file": "cases/mechanism-essay/heading-numbers-only-bad.md",
+  "variant": null,
+  "expect": [
+   {
+    "check": "specific numbers",
+    "passed": false
+   }
+  ],
+  "note": "the only numerals are heading numbers, list markers and a footnote marker",
+  "words": 2063
+ },
+ {
+  "id": "mechanism-essay/to-be-clear-only-bad",
+  "item": 14,
+  "skill": "mechanism-essay",
+  "file": "cases/mechanism-essay/to-be-clear-only-bad.md",
+  "variant": null,
+  "expect": [
+   {
+    "check": "strongest objection",
+    "passed": false
+   }
+  ],
+  "note": "a concession ('To be clear') but no objection",
+  "words": 2054
+ },
+ {
+  "id": "one-idea-post/default-good",
+  "item": 0,
+  "skill": "one-idea-post",
+  "file": "cases/one-idea-post/default-good.md",
+  "variant": null,
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "",
+  "words": 437
+ },
+ {
+  "id": "one-idea-post/confessional-good",
+  "item": 13,
+  "skill": "one-idea-post",
+  "file": "cases/one-idea-post/confessional-good.md",
+  "variant": "confessional",
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "",
+  "words": 437
+ },
+ {
+  "id": "one-idea-post/title-noun-bad",
+  "item": 14,
+  "skill": "one-idea-post",
+  "file": "cases/one-idea-post/title-noun-bad.md",
+  "variant": null,
+  "expect": [
+   {
+    "check": "title is a short imperative or thesis",
+    "passed": false
+   }
+  ],
+  "note": "",
+  "words": 437
+ },
+ {
+  "id": "one-idea-post/title-gerund-bad",
+  "item": 14,
+  "skill": "one-idea-post",
+  "file": "cases/one-idea-post/title-gerund-bad.md",
+  "variant": null,
+  "expect": [
+   {
+    "check": "title is a short imperative or thesis",
+    "passed": false
+   }
+  ],
+  "note": "",
+  "words": 436
+ },
+ {
+  "id": "one-idea-post/title-thesis-good",
+  "item": 14,
+  "skill": "one-idea-post",
+  "file": "cases/one-idea-post/title-thesis-good.md",
+  "variant": null,
+  "expect": [
+   {
+    "check": "title is a short imperative or thesis",
+    "passed": true
+   }
+  ],
+  "note": "",
+  "words": 438
+ },
+ {
+  "id": "one-idea-post/close-12-words-bad",
+  "item": 15,
+  "skill": "one-idea-post",
+  "file": "cases/one-idea-post/close-12-words-bad.md",
+  "variant": null,
+  "expect": [
+   {
+    "check": "last sentence under",
+    "passed": false
+   }
+  ],
+  "note": "prose says under twelve words; this close has twelve",
+  "words": 441
+ },
+ {
+  "id": "one-idea-post/close-above-footnote-bad",
+  "item": 12,
+  "skill": "one-idea-post",
+  "file": "cases/one-idea-post/close-above-footnote-bad.md",
+  "variant": null,
+  "expect": [
+   {
+    "check": "last sentence under",
+    "passed": false
+   }
+  ],
+  "note": "a long close hidden above a short footnote",
+  "words": 454
+ },
+ {
+  "id": "one-idea-post/list-essay-good",
+  "item": 13,
+  "skill": "one-idea-post",
+  "file": "cases/one-idea-post/list-essay-good.md",
+  "variant": "list-essay",
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "over 1,400 words, which the old spec rejected",
+  "words": 1119
+ },
+ {
+  "id": "one-idea-post/list-essay-short-list-bad",
+  "item": 13,
+  "skill": "one-idea-post",
+  "file": "cases/one-idea-post/list-essay-short-list-bad.md",
+  "variant": "list-essay",
+  "expect": [
+   {
+    "check": "numbered items",
+    "passed": false
+   }
+  ],
+  "note": "",
+  "words": 757
+ },
+ {
+  "id": "one-idea-post/miniature-good",
+  "item": 13,
+  "skill": "one-idea-post",
+  "file": "cases/one-idea-post/miniature-good.md",
+  "variant": "miniature",
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "",
+  "words": 175
+ },
+ {
+  "id": "one-idea-post/miniature-first-person-bad",
+  "item": 13,
+  "skill": "one-idea-post",
+  "file": "cases/one-idea-post/miniature-first-person-bad.md",
+  "variant": "miniature",
+  "expect": [
+   {
+    "check": "first person at most",
+    "passed": false
+   }
+  ],
+  "note": "",
+  "words": 189
+ },
+ {
+  "id": "patterns-survey/default-good",
+  "item": 0,
+  "skill": "patterns-survey",
+  "file": "cases/patterns-survey/default-good.md",
+  "variant": null,
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "",
+  "words": 860
+ },
+ {
+  "id": "patterns-survey/no-question-headings-no-references-bad",
+  "item": 15,
+  "skill": "patterns-survey",
+  "file": "cases/patterns-survey/no-question-headings-no-references-bad.md",
+  "variant": null,
+  "expect": [
+   {
+    "check": "question headings",
+    "passed": false
+   },
+   {
+    "check": "References or Sources section",
+    "passed": false
+   }
+  ],
+  "note": "",
+  "words": 842
+ },
+ {
+  "id": "patterns-survey/summary-above-references-bad",
+  "item": 12,
+  "skill": "patterns-survey",
+  "file": "cases/patterns-survey/summary-above-references-bad.md",
+  "variant": null,
+  "expect": [
+   {
+    "check": "closing paragraph does not summarise",
+    "passed": false
+   }
+  ],
+  "note": "",
+  "words": 850
+ },
+ {
+  "id": "patterns-survey/essay-good",
+  "item": 13,
+  "skill": "patterns-survey",
+  "file": "cases/patterns-survey/essay-good.md",
+  "variant": "essay",
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "",
+  "words": 1506
+ },
+ {
+  "id": "principle-column/default-good",
+  "item": 0,
+  "skill": "principle-column",
+  "file": "cases/principle-column/default-good.md",
+  "variant": null,
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "",
+  "words": 675
+ },
+ {
+  "id": "principle-column/few-paragraphs-bad",
+  "item": 15,
+  "skill": "principle-column",
+  "file": "cases/principle-column/few-paragraphs-bad.md",
+  "variant": null,
+  "expect": [
+   {
+    "check": "paragraph count",
+    "passed": false
+   }
+  ],
+  "note": "",
+  "words": 595
+ },
+ {
+  "id": "principle-column/short-550-bad",
+  "item": 15,
+  "skill": "principle-column",
+  "file": "cases/principle-column/short-550-bad.md",
+  "variant": null,
+  "expect": [
+   {
+    "check": "length within 600",
+    "passed": false
+   }
+  ],
+  "note": "between 500 and 600 words: the prose says 600 to 1,700",
+  "words": 533
+ },
+ {
+  "id": "principle-column/confessional-list-good",
+  "item": 13,
+  "skill": "principle-column",
+  "file": "cases/principle-column/confessional-list-good.md",
+  "variant": "confessional-list",
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "",
+  "words": 639
+ },
+ {
+  "id": "principle-column/coaching-good",
+  "item": 13,
+  "skill": "principle-column",
+  "file": "cases/principle-column/coaching-good.md",
+  "variant": "coaching",
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "",
+  "words": 1554
+ },
+ {
+  "id": "reportage-deep-dive/default-good",
+  "item": 0,
+  "skill": "reportage-deep-dive",
+  "file": "cases/reportage-deep-dive/default-good.md",
+  "variant": null,
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "",
+  "words": 630
+ },
+ {
+  "id": "reportage-deep-dive/section-without-bold-bad",
+  "item": 15,
+  "skill": "reportage-deep-dive",
+  "file": "cases/reportage-deep-dive/section-without-bold-bad.md",
+  "variant": null,
+  "expect": [
+   {
+    "check": "a bold thesis sentence in every section",
+    "passed": false
+   }
+  ],
+  "note": "",
+  "words": 630
+ },
+ {
+  "id": "reportage-deep-dive/summary-above-footer-bad",
+  "item": 12,
+  "skill": "reportage-deep-dive",
+  "file": "cases/reportage-deep-dive/summary-above-footer-bad.md",
+  "variant": null,
+  "expect": [
+   {
+    "check": "closing paragraph does not summarise",
+    "passed": false
+   }
+  ],
+  "note": "",
+  "words": 628
+ },
+ {
+  "id": "reportage-deep-dive/evergreen-guide-good",
+  "item": 13,
+  "skill": "reportage-deep-dive",
+  "file": "cases/reportage-deep-dive/evergreen-guide-good.md",
+  "variant": "evergreen-guide",
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "",
+  "words": 1147
+ },
+ {
+  "id": "reportage-deep-dive/commentary-good",
+  "item": 13,
+  "skill": "reportage-deep-dive",
+  "file": "cases/reportage-deep-dive/commentary-good.md",
+  "variant": "commentary",
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "",
+  "words": 934
+ },
+ {
+  "id": "strategy-pattern-essay/default-good",
+  "item": 0,
+  "skill": "strategy-pattern-essay",
+  "file": "cases/strategy-pattern-essay/default-good.md",
+  "variant": null,
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "",
+  "words": 1627
+ },
+ {
+  "id": "strategy-pattern-essay/bold-name-only-bad",
+  "item": 14,
+  "skill": "strategy-pattern-essay",
+  "file": "cases/strategy-pattern-essay/bold-name-only-bad.md",
+  "variant": null,
+  "expect": [
+   {
+    "check": "a bold thesis sentence within",
+    "passed": false
+   }
+  ],
+  "note": "the only bold run is a company name",
+  "words": 1632
+ },
+ {
+  "id": "taxonomy-explainer/default-good",
+  "item": 0,
+  "skill": "taxonomy-explainer",
+  "file": "cases/taxonomy-explainer/default-good.md",
+  "variant": null,
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "the figure caption ends in an image credit, as the skeleton shows",
+  "words": 1830
+ },
+ {
+  "id": "taxonomy-explainer/why-it-matters-opening-bad",
+  "item": 15,
+  "skill": "taxonomy-explainer",
+  "file": "cases/taxonomy-explainer/why-it-matters-opening-bad.md",
+  "variant": null,
+  "expect": [
+   {
+    "check": "first sentence is a definition",
+    "passed": false
+   }
+  ],
+  "note": "",
+  "words": 1822
+ },
+ {
+  "id": "technical-principles-essay/default-good",
+  "item": 0,
+  "skill": "technical-principles-essay",
+  "file": "cases/technical-principles-essay/default-good.md",
+  "variant": null,
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "",
+  "words": 1027
+ },
+ {
+  "id": "technical-principles-essay/topic-heading-bad",
+  "item": 14,
+  "skill": "technical-principles-essay",
+  "file": "cases/technical-principles-essay/topic-heading-bad.md",
+  "variant": null,
+  "expect": [
+   {
+    "check": "headings assert a claim",
+    "passed": false
+   }
+  ],
+  "note": "a five-word topic heading the old check skipped",
+  "words": 1024
+ },
+ {
+  "id": "technical-principles-essay/short-note-good",
+  "item": 13,
+  "skill": "technical-principles-essay",
+  "file": "cases/technical-principles-essay/short-note-good.md",
+  "variant": "short-note",
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "",
+  "words": 288
+ },
+ {
+  "id": "technical-principles-essay/short-note-headings-bad",
+  "item": 13,
+  "skill": "technical-principles-essay",
+  "file": "cases/technical-principles-essay/short-note-headings-bad.md",
+  "variant": "short-note",
+  "expect": [
+   {
+    "check": "no headings",
+    "passed": false
+   }
+  ],
+  "note": "",
+  "words": 291
+ },
+ {
+  "id": "technical-principles-essay/announcement-good",
+  "item": 13,
+  "skill": "technical-principles-essay",
+  "file": "cases/technical-principles-essay/announcement-good.md",
+  "variant": "announcement",
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "",
+  "words": 1044
+ },
+ {
+  "id": "technical-principles-essay/single-thesis-good",
+  "item": 13,
+  "skill": "technical-principles-essay",
+  "file": "cases/technical-principles-essay/single-thesis-good.md",
+  "variant": "single-thesis",
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "",
+  "words": 1382
+ },
+ {
+  "id": "technical-principles-essay/year-in-review-good",
+  "item": 13,
+  "skill": "technical-principles-essay",
+  "file": "cases/technical-principles-essay/year-in-review-good.md",
+  "variant": "year-in-review",
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "",
+  "words": 1440
+ },
+ {
+  "id": "thesis-first-note/default-good",
+  "item": 0,
+  "skill": "thesis-first-note",
+  "file": "cases/thesis-first-note/default-good.md",
+  "variant": null,
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "",
+  "words": 467
+ },
+ {
+  "id": "thesis-first-note/first-sentence-13-bad",
+  "item": 15,
+  "skill": "thesis-first-note",
+  "file": "cases/thesis-first-note/first-sentence-13-bad.md",
+  "variant": null,
+  "expect": [
+   {
+    "check": "first sentence under",
+    "passed": false
+   }
+  ],
+  "note": "13 words; the prose says under twelve",
+  "words": 472
+ },
+ {
+  "id": "thesis-first-note/summary-above-footnote-bad",
+  "item": 12,
+  "skill": "thesis-first-note",
+  "file": "cases/thesis-first-note/summary-above-footnote-bad.md",
+  "variant": null,
+  "expect": [
+   {
+    "check": "closing paragraph does not summarise",
+    "passed": false
+   }
+  ],
+  "note": "",
+  "words": 478
+ },
+ {
+  "id": "thesis-first-note/close-above-footnote-good",
+  "item": 12,
+  "skill": "thesis-first-note",
+  "file": "cases/thesis-first-note/close-above-footnote-good.md",
+  "variant": null,
+  "expect": [
+   {
+    "check": "closing paragraph does not summarise",
+    "passed": true
+   }
+  ],
+  "note": "control: a proper close above a footnote",
+  "words": 476
+ },
+ {
+  "id": "thesis-first-note/headed-essay-good",
+  "item": 13,
+  "skill": "thesis-first-note",
+  "file": "cases/thesis-first-note/headed-essay-good.md",
+  "variant": "headed-essay",
+  "expect": [
+   {
+    "exit": 0
+   }
+  ],
+  "note": "",
+  "words": 1160
+ },
+ {
+  "id": "one-idea-post/unknown-variant",
+  "item": 13,
+  "skill": "one-idea-post",
+  "file": "cases/one-idea-post/unknown-variant.md",
+  "variant": "no-such-variant",
+  "expect": [
+   {
+    "exit": 2
+   }
+  ],
+  "note": "",
+  "words": 437
+ }
+]

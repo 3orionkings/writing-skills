@@ -1,0 +1,28 @@
+{
+  "name": "patterns-survey",
+  "words": {
+    "min": 700,
+    "max": 18000
+  },
+  "headings": {
+    "min": 3
+  },
+  "require_question_headings_min": 3,
+  "require_bold_lead_ins_min": 3,
+  "require_numbers_min": 5,
+  "require_links_min": 3,
+  "require_references_section": true,
+  "forbid_summary_closer": true,
+  "variants": {
+    "essay": {
+      "description": "the practice or career essay of 800 to 4,000 words: question or imperative headings, no references block required",
+      "words": {
+        "min": 800,
+        "max": 4000
+      },
+      "require_question_headings_min": null,
+      "require_references_section": null,
+      "require_bold_lead_ins_min": 2
+    }
+  }
+}

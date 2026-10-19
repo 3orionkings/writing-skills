@@ -1,0 +1,7 @@
+# Codex and ChatGPT display metadata. The skill itself is SKILL.md.
+interface:
+  display_name: "One-Idea Post"
+  short_description: "Short post with one rule, one story and a call to act"
+  default_prompt: "Write a one-idea post about"
+policy:
+  allow_implicit_invocation: true

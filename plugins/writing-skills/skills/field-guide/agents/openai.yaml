@@ -1,0 +1,7 @@
+# Codex and ChatGPT display metadata. The skill itself is SKILL.md.
+interface:
+  display_name: "Field Guide"
+  short_description: "Practitioner guide built on one real case and its artefacts"
+  default_prompt: "Write a field guide on"
+policy:
+  allow_implicit_invocation: true

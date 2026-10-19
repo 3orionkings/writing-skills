@@ -1,0 +1,17 @@
+{
+  "name": "taxonomy-explainer",
+  "words": {
+    "min": 1500,
+    "max": 12000
+  },
+  "headings": {
+    "min": 4
+  },
+  "require_definition_first_sentence": true,
+  "figure_captions_full_sentence": "if_present",
+  "require_references_section": true,
+  "require_open_questions_close": true,
+  "require_links_min": 5,
+  "max_first_person_per_1000_words": 6,
+  "forbid_summary_closer": true
+}

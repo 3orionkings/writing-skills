@@ -1,0 +1,7 @@
+# Codex and ChatGPT display metadata. The skill itself is SKILL.md.
+interface:
+  display_name: "Principle Column"
+  short_description: "Short opinion column that flips a trend into a principle"
+  default_prompt: "Write a principle column on"
+policy:
+  allow_implicit_invocation: true

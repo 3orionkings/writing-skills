@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Tests (${{ matrix.os }}, Python ${{ matrix.python }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-22.04
+            python: "3.8"
+          - os: ubuntu-latest
+            python: "3.13"
+          - os: macos-latest
+            python: "3.13"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Shared files match shared/
+        run: python3 tools/sync_shared.py --check
+      - name: Test suite
+        run: python3 -I -B tests/run_tests.py
+      - name: Manifests, versions and skills agree
+        run: python3 tools/validate.py
+      - name: Packages build
+        run: python3 tools/package.py --out "$RUNNER_TEMP/dist"

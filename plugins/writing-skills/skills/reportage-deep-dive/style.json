@@ -1,0 +1,36 @@
+{
+  "name": "reportage-deep-dive",
+  "words": {
+    "min": 600,
+    "max": 7000
+  },
+  "numbered_list": "required_near_top",
+  "require_method_paragraph": true,
+  "bold_thesis_per_section": true,
+  "require_bold_lead_ins_min": 3,
+  "require_numbers_min": 6,
+  "figure_captions_full_sentence": true,
+  "forbid_summary_closer": true,
+  "variants": {
+    "evergreen-guide": {
+      "description": "1,000 to 2,000 words: a definition, then traits or questions as headings, then tips; sourcing is experience plus one quoted practitioner",
+      "words": {
+        "min": 1000,
+        "max": 2000
+      },
+      "numbered_list": null,
+      "require_method_paragraph": null,
+      "figure_captions_full_sentence": "if_present"
+    },
+    "commentary": {
+      "description": "650 to 2,300 words: series blurb, four numbered topics with bold lead-ins, a lead story told as a timeline, one dry closing line",
+      "words": {
+        "min": 650,
+        "max": 2300
+      },
+      "require_method_paragraph": null,
+      "bold_thesis_per_section": null,
+      "figure_captions_full_sentence": "if_present"
+    }
+  }
+}

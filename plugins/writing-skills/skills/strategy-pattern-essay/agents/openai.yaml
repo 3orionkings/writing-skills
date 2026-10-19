@@ -1,0 +1,7 @@
+# Codex and ChatGPT display metadata. The skill itself is SKILL.md.
+interface:
+  display_name: "Strategy Pattern Essay"
+  short_description: "Strategy essay that names a mechanism the reader can reuse"
+  default_prompt: "Write a strategy pattern essay on"
+policy:
+  allow_implicit_invocation: true

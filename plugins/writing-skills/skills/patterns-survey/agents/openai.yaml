@@ -1,0 +1,7 @@
+# Codex and ChatGPT display metadata. The skill itself is SKILL.md.
+interface:
+  display_name: "Patterns Survey"
+  short_description: "Technical survey readable by engineers, PMs and scientists"
+  default_prompt: "Write a patterns survey on"
+policy:
+  allow_implicit_invocation: true

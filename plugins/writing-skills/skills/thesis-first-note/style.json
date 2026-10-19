@@ -1,0 +1,26 @@
+{
+  "name": "thesis-first-note",
+  "words": {
+    "min": 180,
+    "max": 1500
+  },
+  "headings": "none",
+  "bullets": "none",
+  "first_sentence_max_words": 11,
+  "max_paragraph_sentences": 5,
+  "forbid_summary_closer": true,
+  "variants": {
+    "headed-essay": {
+      "description": "950 to 1,300 words with three to six sentence-case headings, numbers, a short bullet list and constant 'you'",
+      "words": {
+        "min": 950,
+        "max": 1300
+      },
+      "headings": {
+        "min": 3,
+        "max": 6
+      },
+      "bullets": null
+    }
+  }
+}

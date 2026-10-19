@@ -1,0 +1,7 @@
+# Codex and ChatGPT display metadata. The skill itself is SKILL.md.
+interface:
+  display_name: "Humanizer"
+  short_description: "Make drafts read as yours, without machine-writing tells"
+  default_prompt: "Rewrite this draft in my voice with the humanizer skill, keeping every fact and citation."
+policy:
+  allow_implicit_invocation: true

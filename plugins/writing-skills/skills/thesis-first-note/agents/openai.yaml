@@ -1,0 +1,7 @@
+# Codex and ChatGPT display metadata. The skill itself is SKILL.md.
+interface:
+  display_name: "Thesis-First Note"
+  short_description: "First-person note that states its belief in sentence one"
+  default_prompt: "Write a thesis-first note on"
+policy:
+  allow_implicit_invocation: true
