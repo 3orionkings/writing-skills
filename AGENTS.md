@@ -6,6 +6,8 @@ Guidance for coding agents (Claude Code, Codex and others) working in this repos
 
 One plugin, `writing-skills`, holding twelve agent skills: a humanizer and eleven writing forms that stack on it. The product is the text of each `SKILL.md` and its `references/`. The Python scripts are the checkers those skills run on their own drafts. The plugin installs in Claude Code, Codex and the ChatGPT desktop app, and each skill folder also works on its own.
 
+**Scope.** This repository holds these twelve general writing skills and nothing else. Skills for a particular profession, client or private corpus belong in their own repository, never here: do not add them as skills, variants, plugins, marketplace entries, examples or test cases, and do not describe them in the docs.
+
 ## Layout
 
 ```text
@@ -84,6 +86,7 @@ Versions follow semantic versioning. A patch fixes wording or a checker without 
 
 ## Do not
 
+- Add skills, plugins or marketplace entries for another project. Profession-specific or private skill sets live in their own repositories (see Scope).
 - Commit `dist/`, `__pycache__/` or test output.
 - Add third-party dependencies to the scripts. They are standard library only and must run on Python 3.8.
 - Install the plugin or copy skills into `~/.claude`, `~/.agents` or `~/.codex` while working here.
