@@ -45,7 +45,7 @@ You can name a skill, or describe the piece and let the agent choose. Each descr
 
 ## Install
 
-The repository is a marketplace for both Claude Code and Codex. While the repository is private, installing needs git access to it, for example through `gh auth login`.
+The repository is a marketplace for both Claude Code and Codex.
 
 ### Claude Code
 
