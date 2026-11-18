@@ -5,9 +5,10 @@
     python3 tools/export_humanizer.py ../humanizer --check   verify only; change nothing
 
 This repository is the source of the humanizer. The standalone repository holds the same skill
-at its root (SKILL.md, scripts/, references/, agents/) plus the linter's test cases, and its own
-README, manifests and CI. Run this after any change to the humanizer or to shared/lint.py, then
-commit in the standalone checkout. Never edit the exported copies there.
+at its root (SKILL.md, scripts/, references/) for Claude Code and skill installers, a second copy
+under codex/skills/humanizer/ for its Codex and ChatGPT plugin (Codex reads skills from a folder of
+skill folders), the linter's test cases, and its own README, manifests and CI. Run this after any
+change to the humanizer or to shared/lint.py, then commit in the standalone checkout. Never edit the exported copies there.
 
 Exit status 0 when every copy matches, 1 when one differs or is missing, 2 on a usage error.
 Standard library only.
@@ -26,6 +27,9 @@ FILES = [
     (os.path.join(SKILL, "SKILL.md"), "SKILL.md"),
     (os.path.join(SKILL, "scripts", "lint.py"), os.path.join("scripts", "lint.py")),
     (os.path.join(SKILL, "references", "ai-tells.md"), os.path.join("references", "ai-tells.md")),
+    (os.path.join(SKILL, "SKILL.md"), os.path.join("codex", "skills", "humanizer", "SKILL.md")),
+    (os.path.join(SKILL, "scripts", "lint.py"), os.path.join("codex", "skills", "humanizer", "scripts", "lint.py")),
+    (os.path.join(SKILL, "references", "ai-tells.md"), os.path.join("codex", "skills", "humanizer", "references", "ai-tells.md")),
     (os.path.join(ROOT, "tests", "lint_cases.json"), os.path.join("tests", "lint_cases.json")),
     (os.path.join(ROOT, "tests", "vocab_catalogue.json"), os.path.join("tests", "vocab_catalogue.json")),
     (os.path.join(ROOT, "tests", "cases", "lint", "author-sample-dashes.txt"),
@@ -35,13 +39,12 @@ FILES = [
 ]
 
 # The skill's Files section points at this repository's sync tool; the standalone copy points here.
-REWRITES = {
-    "SKILL.md": [(
+SKILL_NOTE = [(
         "The same file ships in every style skill; edit it only through `tools/sync_shared.py` in the source tree.",
         "The same linter ships with every skill in the writing-skills collection "
         "(github.com/3orionkings/writing-skills), which is its source.",
-    )],
-}
+)]
+REWRITES = {"SKILL.md": SKILL_NOTE, os.path.join("codex", "skills", "humanizer", "SKILL.md"): SKILL_NOTE}
 
 
 def exported(src, rel):
