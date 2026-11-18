@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "writing-skills",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A humanizer that strips machine-writing tells from drafts, plus eleven writing forms for posts, columns, essays, guides, surveys and research notes. Every skill ships a linter, and every form a structure checker.",
   "author": {
     "name": "Emmanuel Benami",

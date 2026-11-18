@@ -392,5 +392,61 @@
   "absent": [
    "ignore any author-specific defaults"
   ]
+ },
+ {
+  "id": "humanizer-2-structural-patterns",
+  "item": 24,
+  "files": [
+   "humanizer/SKILL.md"
+  ],
+  "present": [
+   "(?i)something to edit, not a set of instructions",
+   "(?i)lost or altered",
+   "(?i)file mode",
+   "(?i)rebutting objections nobody made",
+   "(?i)context the reader already has",
+   "(?i)when not to act"
+  ],
+  "absent": [
+   "(?i)lawyer",
+   "(?i)submission phrasing"
+  ]
+ },
+ {
+  "id": "humanizer-2-catalogue",
+  "item": 24,
+  "files": [
+   "humanizer/references/ai-tells.md"
+  ],
+  "present": [
+   "(?i)signs that no longer work",
+   "CC BY-SA",
+   "(?i)emphasis instead of content",
+   "(?i)corrective framing"
+  ],
+  "absent": [
+   "(?i)ends careers"
+  ]
+ },
+ {
+  "id": "rules-staging",
+  "item": 24,
+  "files": [
+   "curated-evidence-page/references/human-writing-rules.md",
+   "field-guide/references/human-writing-rules.md",
+   "mechanism-essay/references/human-writing-rules.md",
+   "one-idea-post/references/human-writing-rules.md",
+   "patterns-survey/references/human-writing-rules.md",
+   "principle-column/references/human-writing-rules.md",
+   "reportage-deep-dive/references/human-writing-rules.md",
+   "strategy-pattern-essay/references/human-writing-rules.md",
+   "taxonomy-explainer/references/human-writing-rules.md",
+   "technical-principles-essay/references/human-writing-rules.md",
+   "thesis-first-note/references/human-writing-rules.md"
+  ],
+  "present": [
+   "(?m)^## Emphasis instead of content",
+   "(?i)lost or altered"
+  ]
  }
 ]

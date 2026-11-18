@@ -15,12 +15,16 @@ Usage:
 Exit status: 0 when there are no hard findings, 1 when there are, 2 on a usage error.
 
 Hard findings are patterns the author has ruled out entirely: dashes used as punctuation,
-tell vocabulary and phrases, markdown and bullets, chatbot framing, negative parallelism,
-emoji and symbols, connective openers, significance framing.
+tell vocabulary and phrases, markdown and bullets, chatbot framing and chatbot artefacts
+(utm_source=chatgpt.com, oaicite, 2026-xx-xx), negative parallelism, staged closers and
+throat-clearing openers ("Let that sink in", "Honestly?"), online-presence padding, emoji and symbols,
+connective openers, significance framing.
 Soft findings need a human look: triads, participial tails, hedges, uniform sentence
 length, repeated sentence openings, self-answered questions, fragments for punch,
 context-dependent words, aphorism formulas, copula avoidance, gap-filling speculation,
-a heading restated in the line below it.
+a heading restated in the line below it, rebutting objections nobody made, closers that explain the
+example, corrective framing, the text describing itself, outlet lists, vague association,
+influence framing, stock sections, unfilled placeholders, the same short closer repeated.
 
 Words with a literal or trade sense (navigate, robust, dynamic, leverage, enhance, elevate,
 foster, harness, landscape, comprehensive, facilitate) are soft unless the use is figurative
@@ -50,7 +54,7 @@ SOFT = "soft"
 TELL_WORDS = [
     r"delv(?:e|es|ed|ing)", r"tapestr(?:y|ies)", r"realms?", r"testament",
     r"underscor(?:e|es|ed|ing)", r"pivotal", r"crucial(?:ly)?", r"intricate(?:ly)?",
-    r"meticulous(?:ly)?", r"multifaceted", r"nuanced", r"vibrant", r"showcas(?:e|es|ed|ing)",
+    r"intricac(?:y|ies)", r"meticulous(?:ly)?", r"multifaceted", r"nuanced", r"vibrant", r"showcas(?:e|es|ed|ing)",
     r"garner(?:s|ed|ing)?", r"bolster(?:s|ed|ing)?", r"interplay", r"seamless(?:ly)?",
     r"notably", r"additionally", r"moreover", r"furthermore",
     r"ever-evolving", r"fast-paced", r"game-?chang(?:er|ers|ing)", r"cutting-edge",
@@ -149,7 +153,8 @@ POLYSEMOUS = {
 # Context-dependent words from the catalogue: always soft, and they count towards a cluster.
 CONTEXT_WORDS = [
     r"journeys?", r"emphasi[sz](?:e|es|ed|ing)", r"essential(?:ly)?", r"highlight(?:s|ed|ing)?",
-    r"perfectly", r"significant(?:ly)?", r"valuable",
+    r"perfectly", r"significant(?:ly)?", r"valuable", r"quietly", r"echo(?:es|ed|ing)", r"enduring",
+    r"dependable", r"universally",
     r"key(?=\s+(?:takeaways?|insights?|factors?|roles?|components?|elements?|aspects?|players?|drivers?|features?|"
     r"considerations?|benefits?|challenges?|steps?|parts?|questions?|differences?|lessons?|points?|areas?|themes?|"
     r"trends?|principles?|priorit(?:y|ies)|metrics?|stakeholders?|success|ingredients?|pillars?|learnings?|"
@@ -205,6 +210,8 @@ TELL_PHRASES = [
     r"exciting (?:news|times)", r"thrilled to", r"excited to (?:announce|share)",
     r"look no further", r"the world of", r"effortlessly",
     r"game[- ]?changer", r"a must-(?:read|have|visit)", r"in the realm of",
+    r"you(?:'re| are) absolutely right", r"would you like me to", r"should i (?:continue|go on|expand)",
+    r"i apologi[sz]e for any (?:inconvenience|confusion)", r"as of my (?:last|latest) (?:update|training)",
 ]
 
 # Phrases that are tells in most prose but ordinary in some: review, do not auto-fix.
@@ -251,13 +258,117 @@ GAP_FILLING = [
     r"(?:likely|probably|presumably|possibly) (?:grew up|was born|attended|studied|spent (?:his|her|their) (?:early|childhood))",
     r"little is (?:publicly )?known about",
     r"details (?:about|of) (?:his|her|their) (?:early|personal|private) life (?:are|remain) (?:scarce|limited|unclear|unknown)",
+    r"(?:is|are) not (?:widely |publicly |readily |extensively |well )(?:available|documented|disclosed|reported|known)",
+    r"based on (?:the )?(?:available|limited) (?:information|sources|data|evidence)",
+    r"(?:while|although) specific details (?:about|of|on|are|remain)",
+    r"in the (?:provided|available) (?:sources|materials|documents)",
 ]
+
+# Empty emphasis: a sentence that claims weight instead of adding a fact. Hard: almost never written
+# on purpose. Soft: a person may mean it; look before cutting.
+EMPHASIS_HARD = [
+    r"let that sink in", r"read that again",
+    r"(?:that|this)(?:'s| is) the (?:real|whole|actual) (?:win|story|lesson|point|problem|unlock|magic)",
+    r"(?:that|this) distinction matters", r"make no mistake", r"real talk",
+    r"here'?s the (?:deal|kicker|twist|catch|reality|problem)",
+    r"the real question (?:is|here)", r"what (?:really|truly) matters (?:is|here)", r"the heart of the matter",
+    r"the deeper (?:issue|question|truth|problem) (?:is|here)",
+    r"(?:quick note|heads up|pro tip|hot take)\s*:", r"now let'?s (?:look|turn|talk|move)",
+    r"the future looks bright", r"exciting times (?:lie )?ahead",
+]
+EMPHASIS_SOFT = [
+    (r"the thing is[,:]", "throat-clearing opener: make the point instead"),
+    (r"let'?s be (?:honest|real|clear)", "staged candour before a routine claim"),
+    (r"i(?:'m| am) not (?:saying|arguing|suggesting|claiming)", "rebutting an objection nobody made: keep only if someone made it"),
+    (r"don'?t get me wrong", "rebutting an objection nobody made: keep only if someone made it"),
+    (r"this (?:is not|isn'?t) to say", "rebutting an objection nobody made: keep only if someone made it"),
+    (r"this (?:is not|isn'?t) (?:mainly |really |primarily )?about", "rebutting an objection nobody made: keep only if someone made it"),
+    (r"some (?:might|may|would|will) (?:say|argue|object)", "rebutting an objection nobody made: name who, or cut"),
+    (r"you might (?:think|assume|expect)", "rebutting an objection nobody made: keep only if readers believe it"),
+    (r"(?:a|the|one) tempting (?:approach|option|move|fix|answer) (?:would be|is)", "rejecting an option nobody proposed"),
+    (r"one might be tempted to", "rejecting an option nobody proposed"),
+    (r"(?:an|the) obvious (?:approach|option|fix|move) would be", "rejecting an option nobody proposed"),
+    (r"it would be easy to (?:just )?", "rejecting an option nobody proposed"),
+    (r"(?:it|this|that) (?:was|is) a (?:lesson|masterclass|study) in", "closer that names what the scene already showed"),
+    (r"the message was clear", "closer that names what the scene already showed"),
+    (r"(?:this|which|that|it) (?:shows|demonstrates|illustrates|proves|underlines) (?:the importance|how important|how much|why it matters)",
+     "closer that explains the example the reader just saw"),
+    (r"only time will tell", "stock closer about the future"),
+    (r"a step in the right direction", "stock closer about the future"),
+]
+# "That matters." "This counts." as a sentence of its own, and "every. single. day."
+EMPHATIC_SHORT = re.compile(r"(?:^|(?<=[.!?]\s))(?:And )?(?:That|This|It) (?:matters|counts)(?: more than [a-z ]{2,20})?\.")
+EMPHATIC_PERIODS = re.compile(r"(?<![A-Za-z.])(?:[a-z]+\.\s){2,}[a-z]+\.")
+EMPHATIC_QUESTION = re.compile(r"(?:^|(?<=[.!?]\s))(?:Honestly|Seriously|Frankly|Truthfully|Spoiler|Plot twist)\?")
+
+# Corrective framing: a hedge that recasts a source or claim (common in output since mid-2026).
+CORRECTIVE = [
+    r"should be (?:read|treated|understood|seen|viewed|taken|regarded) as\b[^.?!]{1,60}?\brather than",
+    r"should not be confused with",
+    r"(?:does|do|did) not (?:establish|prove|confirm|demonstrate) (?:that|whether|any)\b",
+]
+
+# The text describing itself or how it was made, instead of its subject.
+SELF_DESCRIPTION = [
+    r"(?:was|were|has been|have been) (?:added|introduced|written) to replace",
+    r"(?:is|are) flagged rather than guessed", r"rather than guessed",
+    r"(?:compiled|drawn|generated|sourced|assembled) from (?:each|the|our|publicly|multiple|various)",
+    r"the (?:table|chart|list|figures?|section) below (?:compares|shows|lists|summari[sz]es|sets out)",
+    r"this (?:section|page|document) is organi[sz]ed (?:by|around|into)",
+    r"while (?:preserving|retaining|keeping) (?:the |all |its |every |your )?(?:original|existing|author'?s|core|overall|key|essential|intended)\b",
+    r"(?:to|in order to) (?:ensure|improve) (?:neutrality|clarity|readability|flow|accuracy|consistency|tone)",
+    r"i (?:have )?carefully reviewed",
+]
+
+# Notability padding: coverage and follower counts standing in for what was said or done.
+NOTABILITY_HARD = [r"(?:an? )?(?:active|strong|robust|growing|significant|vibrant) (?:social media|online|digital) presence"]
+NOTABILITY_SOFT = [
+    (r"independent coverage", "coverage named instead of what it said"),
+    (r"(?:trade|regional|national) (?:publications|media|outlets)", "coverage named instead of what it said"),
+    (r"(?:over|more than) [\d,.]+\s?[km]? (?:followers|subscribers)", "follower count standing in for a fact"),
+]
+OUTLET_LIST = re.compile(
+    r"(?i:\b(?:featured|profiled|cited|covered|quoted|mentioned|interviewed))\s+(?i:in|by)\s+"
+    r"(?:(?i:outlets such as|publications such as)\s+)?(?:the\s+)?[A-Z][^.;]{0,50},\s+(?:the\s+)?[A-Z][^.;]{0,50},"
+)
+
+VAGUE_ASSOCIATION = [
+    r"(?:is|was|are|were|been|being|become|became|remains?)\s+(?:closely\s+|widely\s+|particularly\s+|often\s+|primarily\s+|"
+    r"notably\s+|most\s+)?(?:associated|connected|linked|tied)\s+(?:with|to)",
+    r"in (?:association|connection) with",
+]
+
+INFLUENCE = [
+    r"(?:sparked|prompted|fuel(?:l)?ed|started|shaped|contributed to|informed) (?:broader |wider |public |ongoing |national )?"
+    r"(?:discussions?|debates?|conversations?|dialogues?) (?:about|on|around|over)",
+    r"in (?:broader|wider|ongoing|public) (?:discussions?|debates?|conversations?) (?:about|on|around)",
+    r"despite (?:these|its|their|such|the) challenges",
+]
+
+STOCK_HEADING = re.compile(
+    r"^(?:challenges(?:\s+and\s+(?:future|outlook|prospects|opportunities|future outlook|future prospects))?|"
+    r"future (?:outlook|prospects|directions)|awards? and (?:recognition|honou?rs|achievements)|recognition|"
+    r"legacy(?:\s+and\s+(?:impact|influence))?|impact and legacy|conclusion|in conclusion|key takeaways|final thoughts)\s*:?\s*$",
+    re.I,
+)
+
+# Leftovers that only a chatbot or a pasted chat leaves behind.
+ARTEFACTS = re.compile(
+    r"utm_source=(?:chatgpt(?:\.com)?|openai|copilot(?:\.com)?)|referrer=grok\.com|oaicite|contentReference\[|"
+    r"\bturn\d+(?:search|news|view|fetch)\d+\b|\bINSERT_[A-Z_]+\b|\b(?:19|20)\d\d-[xX]{2}-[xX]{2}\b",
+    re.I,
+)
+PLACEHOLDER = re.compile(
+    r"\[(?:insert|add|your|enter|name|first name|date|company|link|url|source|todo|tbd|placeholder|client|recipient)\b[^\]\n]{0,40}\]",
+    re.I,
+)
 
 APHORISM = re.compile(
     r"\b(?:is|are|was|were|becomes?|became|remains?)\s+(?:the|a)\s+(?:new\s+|real\s+|true\s+)?"
     r"(?:language|currency|architecture|grammar|operating system|lingua franca|oxygen|lifeblood|backbone|bedrock|"
     r"cornerstone|heartbeat|dna|fabric|north star|soul|glue|secret sauce|engine)\s+of\b"
-    r"|\b(?:is|are)\s+the\s+new\s+(?:oil|gold|electricity|black|currency)\b",
+    r"|\b(?:is|are)\s+the\s+new\s+(?:oil|gold|electricity|black|currency)\b"
+    r"|\b(?:becomes?|became|turns? into|turned into)\s+(?:a|the)\s+(?:trap|crutch|ceiling|liability|superpower|moat|mirror)\b",
     re.I,
 )
 COPULA_AVOIDANCE = re.compile(
@@ -288,7 +399,13 @@ NEG_PARALLEL_SAME_SENTENCE = [
     r"\bisn'?t (?:just|only|about|merely)\b[^.;?!]{1,80}?\b(?:it'?s|but|rather)\b",
     r"\b(?:less|more) about\b[^.;?!]{1,60}?\b(?:and|than) (?:more|less) about\b",
     r"\bnot (?:a|an|the)\b[^.;?!]{1,40}?,\s*(?:but|rather)\s(?:a|an|the)\b",
+    r"\bno [^,.;!?]{1,25}, no [^,.;!?]{1,25},? (?:and )?(?:just|only|simply)\b",
 ]
+# "This does not mean X. It means Y." The same move split over two sentences.
+NEG_SPLIT_MEAN = re.compile(
+    r"\b(?:does|do|did)(?:n't| not) mean\b[^.?!]{1,100}[.?!]\s+(?:It|This|That|Instead,? it|Rather,? it)\s+means\b")
+# "The options come from the selected item, no guessing." A clipped negative tail.
+CLIPPED_TAIL = re.compile(r",\s+no\s+(?:[a-z]+\s+)?[a-z]+[.!]\s*$")
 NEG_PARALLEL_ACROSS = re.compile(
     r"\b(?:isn'?t|is not|aren'?t|are not|wasn'?t|was not|not)\s(?:just |only |merely |simply |about )?[^.?!]{1,60}[.?!]\s+"
     r"(?:It|That|This|They)(?:'s| is| are|'re)\b",
@@ -368,6 +485,14 @@ RX_SOFT_PHRASES = [(compile_list([p]), note) for p, note in SOFT_PHRASES]
 RX_HEDGE = compile_list(HEDGES)
 RX_SIGNPOST = compile_list(SIGNPOSTS)
 RX_GAP = compile_list(GAP_FILLING)
+RX_EMPHASIS = compile_list(EMPHASIS_HARD)
+RX_EMPHASIS_SOFT = [(compile_list([p]), note) for p, note in EMPHASIS_SOFT]
+RX_CORRECTIVE = compile_list(CORRECTIVE)
+RX_SELF = compile_list(SELF_DESCRIPTION)
+RX_NOTABILITY = compile_list(NOTABILITY_HARD)
+RX_NOTABILITY_SOFT = [(compile_list([p]), note) for p, note in NOTABILITY_SOFT]
+RX_ASSOC = compile_list(VAGUE_ASSOCIATION)
+RX_INFLUENCE = compile_list(INFLUENCE)
 RX_CONN_HARD = re.compile(r"^\s*(?:" + "|".join(CONNECTIVES_HARD) + r")\b[,\s]", re.I)
 RX_CONN_SOFT = re.compile(r"^\s*(?:" + "|".join(CONNECTIVES_SOFT) + r")\b[,\s]", re.I)
 RX_NEG_SAME = [re.compile(p, re.I) for p in NEG_PARALLEL_SAME_SENTENCE]
@@ -549,6 +674,41 @@ def lint(text, allow_markdown=False, dash_allowance=None):
         for m in SELF_QUESTION.finditer(line):
             add("self-answered question", SOFT, i, context(line, m.start(), m.end()), "short question the writer answers")
 
+        # Staging, self-description, notability padding and chat leftovers -----------
+        for m in RX_EMPHASIS.finditer(line):
+            add("emphasis", HARD, i, context(line, m.start(), m.end()), "signals weight instead of adding a fact: " + m.group(0))
+        for m in EMPHATIC_QUESTION.finditer(line):
+            add("emphasis", HARD, i, context(line, m.start(), m.end()), "staged candour: state the point")
+        for rx, note in RX_EMPHASIS_SOFT:
+            for m in rx.finditer(line):
+                add("emphasis", SOFT, i, context(line, m.start(), m.end()), note + ": " + m.group(0))
+        for m in EMPHATIC_SHORT.finditer(line):
+            add("emphasis", SOFT, i, context(line, m.start(), m.end()), "closer that asks the reader to pause")
+        for m in EMPHATIC_PERIODS.finditer(line):
+            add("emphasis", SOFT, i, context(line, m.start(), m.end()), "emphasis by full stops between words")
+        for m in RX_CORRECTIVE.finditer(line):
+            add("corrective framing", SOFT, i, context(line, m.start(), m.end()), "hedge that recasts a claim; state what is known")
+        for m in RX_SELF.finditer(line):
+            add("self-description", SOFT, i, context(line, m.start(), m.end()), "describes the text or how it was made, not the subject")
+        for m in RX_NOTABILITY.finditer(line):
+            add("notability", HARD, i, context(line, m.start(), m.end()), "online presence offered as a fact about the subject")
+        for rx, note in RX_NOTABILITY_SOFT:
+            for m in rx.finditer(line):
+                add("notability", SOFT, i, context(line, m.start(), m.end()), note + ": " + m.group(0))
+        for m in OUTLET_LIST.finditer(line):
+            add("notability", SOFT, i, context(line, m.start(), m.end()), "list of outlets standing in for what they said")
+        for m in RX_ASSOC.finditer(line):
+            add("vague association", SOFT, i, context(line, m.start(), m.end()), "name the relationship if it is known")
+        for m in RX_INFLUENCE.finditer(line):
+            add("significance", SOFT, i, context(line, m.start(), m.end()), "influence or challenges framing: say what happened")
+        for m in ARTEFACTS.finditer(line):
+            add("chatbot artefact", HARD, i, context(line, m.start(), m.end()), "left behind by a chatbot: " + m.group(0))
+        for m in PLACEHOLDER.finditer(line):
+            add("placeholder", SOFT, i, context(line, m.start(), m.end()), "unfilled placeholder: fill it, or leave it for the user on purpose")
+        hm = HEADING_LINE.match(line)
+        if hm and STOCK_HEADING.match(re.sub(r"[*_#]", "", hm.group(1)).strip()):
+            add("stock section", SOFT, i, context(line, 0, min(len(line), 60)), "stock section: keep only if it holds facts")
+
     if dash_allowance is not None and dash_total:
         words = word_count(text)
         allowed = 0 if dash_allowance <= 0 else max(1, int(dash_allowance * words / 1000.0 + 0.5))
@@ -605,7 +765,13 @@ def lint(text, allow_markdown=False, dash_allowance=None):
             if not any(m.start() < f.end() and f.start() < m.end() for f in NEG_PARALLEL_ACROSS.finditer(para)):
                 add("negative parallelism", SOFT, pstart, context(para, m.start(), m.end()),
                     "possible 'You're not X. You're Y.' across sentences")
+        for m in NEG_SPLIT_MEAN.finditer(para):
+            add("negative parallelism", HARD, pstart, context(para, m.start(), m.end()), "'This does not mean X. It means Y.'")
         sentences = split_sentences(para)
+        for s in sentences:
+            m = CLIPPED_TAIL.search(s)
+            if m:
+                add("negative parallelism", SOFT, pstart, context(s, m.start(), m.end()), "clipped negative tail: say what it means")
         all_sentences.extend(sentences)
         for s in sentences:
             if RX_CONN_HARD.match(s):
@@ -615,6 +781,17 @@ def lint(text, allow_markdown=False, dash_allowance=None):
             m = PARTICIPLE_TAIL.search(s)
             if m and m.group(1).lower() not in PARTICIPLE_STOP:
                 add("participial tail", SOFT, pstart, context(s, m.start(), m.end()), "sentence ends on a commenting -ing phrase")
+
+    # The same short closing paragraph after more than one section --------
+    seen = {}
+    for pstart, para in paragraphs:
+        if word_count(para) <= 10 and not HEADING_LINE.match(para):
+            key = re.sub(r"[^a-z0-9 ]", "", para.lower()).strip()
+            if key in seen:
+                add("repeated closer", SOFT, pstart, context(para, 0, min(len(para), 60)),
+                    "the same short paragraph appears again (first at line %d)" % seen[key])
+            else:
+                seen[key] = pstart
 
     # Chatbot framing ----------------------------------------------------
     nonblank = [(i, l) for i, l in enumerate(lines, 1) if l.strip()]
@@ -696,6 +873,14 @@ def vocabulary_listing():
     out += show("SOFT: hedges", HEDGES)
     out += show("SOFT: signposting", SIGNPOSTS)
     out += show("SOFT: gap-filling speculation", GAP_FILLING)
+    out += show("HARD: empty emphasis (closers, openers, sayings)", EMPHASIS_HARD)
+    out += show("SOFT: empty emphasis (rebuttals of objections nobody made, closers that explain the example)", [p for p, _ in EMPHASIS_SOFT])
+    out += show("SOFT: corrective framing", CORRECTIVE)
+    out += show("SOFT: the text describing itself", SELF_DESCRIPTION)
+    out += show("HARD: notability padding", NOTABILITY_HARD)
+    out += show("SOFT: notability padding", [p for p, _ in NOTABILITY_SOFT])
+    out += show("SOFT: vague association", VAGUE_ASSOCIATION)
+    out += show("SOFT: influence and challenges framing", INFLUENCE)
     out += show("HARD: connective openers", CONNECTIVES_HARD)
     out += show("SOFT: connective openers", CONNECTIVES_SOFT)
     return "\n".join(out).rstrip()

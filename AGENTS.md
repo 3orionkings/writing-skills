@@ -26,6 +26,7 @@ shared/                        the only place to edit lint.py, style_check.py, h
 tools/sync_shared.py           copies shared/ into the skills; --check verifies
 tools/validate.py              manifests, versions, skills and README agree
 tools/package.py               builds dist/*.skill and dist/writing-skills.zip
+tools/export_humanizer.py      copies the humanizer into a checkout of github.com/3orionkings/humanizer
 tests/                         run_tests.py, build_cases.py, the JSON case files and tests/cases/
 .claude-plugin/marketplace.json     Claude Code marketplace, points at ./plugins/writing-skills
 .agents/plugins/marketplace.json    Codex marketplace, points at ./plugins/writing-skills
@@ -83,6 +84,10 @@ The last two need the Claude Code CLI; CI runs everything else. Codex has no val
 ## Releasing
 
 Versions follow semantic versioning. A patch fixes wording or a checker without changing what passes. A minor version adds a rule, check, variant or skill. A major version removes or renames a skill, a variant or a script option. To release: bump the version in the places listed under Invariants, write the `CHANGELOG.md` entry, run the checks, tag `vX.Y.Z`, and attach the output of `python3 tools/package.py` to a GitHub release.
+
+## The standalone humanizer
+
+The humanizer is also published on its own at github.com/3orionkings/humanizer. That repository is exported from this one: after any change to the humanizer, `shared/lint.py` or the lint test cases, run `python3 tools/export_humanizer.py PATH-TO-HUMANIZER-CHECKOUT` and commit there. Never edit the exported files in the standalone repository.
 
 ## Do not
 
